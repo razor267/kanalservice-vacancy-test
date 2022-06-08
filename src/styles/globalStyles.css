@@ -1,0 +1,17 @@
+:root {
+    --white: #fff;
+    --black: #333;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
