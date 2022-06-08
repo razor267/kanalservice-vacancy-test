@@ -1,0 +1,15 @@
+.headerWrapper {
+    display: grid;
+    gap: 20px;
+}
+
+.title {
+    font-size: 24px;
+    justify-self: center;
+}
+
+.filters {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-items: center;
+}

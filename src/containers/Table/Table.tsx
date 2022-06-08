@@ -4,7 +4,7 @@ import s from './Table.module.css'
 const Table: FC = () => {
     return (
         <div>
-            Hello World
+            Table
         </div>
     )
 }

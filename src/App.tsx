@@ -1,10 +1,10 @@
 import React from 'react'
 import './App.css'
-import Table from './pages/Table'
+import Home from './pages/Home'
 
 function App() {
   return (
-    <Table/>
+    <Home/>
   );
 }
 

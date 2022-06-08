@@ -1,0 +1,5 @@
+.appWrapper {
+    display: grid;
+    gap: 40px;
+    margin: 20px;
+}
