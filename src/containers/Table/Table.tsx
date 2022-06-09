@@ -1,10 +1,24 @@
 import React, {FC} from 'react'
 import s from './Table.module.css'
+import TableHeader from './TableHeader'
+import {DataType} from '../../mock/data'
 
-const Table: FC = () => {
+type PropsType = {
+    renderArr: DataType[]
+}
+
+const Table: FC<PropsType> = ({renderArr}) => {
+
     return (
         <div>
-            Table
+            <TableHeader/>
+            {renderArr.map(item => (<div key={item.id} className={s.row}>
+                    <div>{item.Date}</div>
+                    <div>{item.Name}</div>
+                    <div>{item.amount}</div>
+                    <div>{item.distance}</div>
+                </div>
+            ))}
         </div>
     )
 }
