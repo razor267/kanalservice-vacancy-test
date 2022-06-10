@@ -13,8 +13,8 @@ const Table: FC<PropsType> = ({renderArr}) => {
         <div>
             <TableHeader/>
             {renderArr.map(item => (<div key={item.id} className={s.row}>
-                    <div>{item.Date}</div>
-                    <div>{item.Name}</div>
+                    <div>{item.date}</div>
+                    <div>{item.name}</div>
                     <div>{item.amount}</div>
                     <div>{item.distance}</div>
                 </div>

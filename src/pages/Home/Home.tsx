@@ -10,7 +10,14 @@ const Home: FC = () => {
     const [renderArr, setRenderArr] = useState<DataType[]>(data)
     const [column, setColumn] = useState('Дата')
     const [condition, setCondition] = useState('Равно')
-    const [value, setValue] = useState<number | ''>('')
+    const [value, setValue] = useState('')
+
+    const showAll = () => {
+        setRenderArr(data)
+        setColumn('Дата')
+        setCondition('Равно')
+        setValue('')
+    }
 
     const filter = () => {
         setRenderArr(data.filter(item=> {
@@ -28,20 +35,49 @@ const Home: FC = () => {
                         default:
                             return null
                     }
+                case 'Расстояние':
+                    switch (condition) {
+                        case 'Равно':
+                            return item.distance === Number(value)
+                        case 'Больше':
+                            return item.distance > Number(value)
+                        case 'Меньше':
+                            return item.distance < Number(value)
+                        case 'Содержит':
+                            return item.distance.toString().includes(value.toString())
+                        default:
+                            return null
+                    }
+                case 'Название':
+                    switch (condition) {
+                        case 'Равно':
+                            return item.name.toLowerCase() === value.toLowerCase()
+                        case 'Больше':
+                            return item
+                        case 'Меньше':
+                            return item
+                        case 'Содержит':
+                            return item.name.toLowerCase().includes(value.toLowerCase())
+                        default:
+                            return null
+                    }
+                default:
+                    return null
             }
         }))
-        console.log(column)
-        console.log(condition)
-        console.log(value)
     }
 
     return (
         <div className={s.appWrapper}>
             <Header
+                column={column}
+                condition={condition}
+                value={value}
                 setColumn={setColumn}
                 setCondition={setCondition}
                 setValue={setValue}
                 filter={filter}
+                showAll={showAll}
             />
             <Suspense component={<Table renderArr={renderArr}/>}/>
         </div>
