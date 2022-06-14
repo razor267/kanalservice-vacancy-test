@@ -60,4 +60,7 @@ npm start
   <a href="https://www.typescriptlang.org/">    
     <img src="https://github.com/devicons/devicon/blob/master/icons/typescript/typescript-plain.svg" title="TypeScript" alt="TypeScript" width="40" height="40"/>&nbsp;
   </a>
+    <a href="https://www.postgresql.org/">    
+    <img src="https://github.com/devicons/devicon/blob/master/icons/postgresql/postgresql-original-wordmark.svg" title="Postgresql" alt="Postgresql" width="40" height="40"/>&nbsp;
+  </a>
 </div>
